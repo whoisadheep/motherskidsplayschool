@@ -1,0 +1,420 @@
+/* RESET & BASE FIXES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Mobile Navigation - Fixed right positioning */
+.mobile-nav-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--light);
+    cursor: pointer;
+  }
+  
+  /* This ensures the nav has proper positioning context */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background-color: var(--primary);
+    z-index: 1000;
+    padding: 20px;
+    transition: all 0.3s ease;
+    overflow-y: auto;
+  }
+  
+  .sidebar.active {
+    right: 0;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar .logo-container {
+    flex-direction: column;
+  }
+  
+  .sidebar .logo-container img {
+    margin-bottom: 10px;
+    width: 60px; /* Smaller in sidebar */
+  }
+  
+  .sidebar .logo {
+    font-size: 1.5rem;
+  }
+  
+  .close-sidebar {
+    font-size: 1.5rem;
+    color: var(--light);
+    cursor: pointer;
+  }
+  
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-links li {
+    margin-bottom: 15px;
+  }
+  
+  .sidebar-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: block;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-links a:hover {
+    color: var(--dark);
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+  }
+  
+  /* Update your media query to display the mobile toggle and handle sidebar */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    
+    .mobile-nav-toggle {
+      display: block;
+    }
+    
+    .about-content,
+    .contact-content {
+      grid-template-columns: 1fr;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+    }
+  }
+
+  
+  /* Container fix */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    overflow-x: hidden;
+  }
+  
+  /* Hero Section */
+  .schedule-hero {
+    background-color: var(--primary);
+  }
+  
+  /* Schedule Form Section */
+  .schedule-form-section {
+    padding: 80px 0;
+    background-color: var(--light);
+    overflow-x: hidden;
+  }
+  
+  .schedule-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    overflow-x: hidden;
+  }
+  
+  /* Schedule Info Styles */
+  .schedule-info {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .schedule-info h2 {
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-size: 2rem;
+  }
+  
+  .schedule-times {
+    margin: 25px 0;
+  }
+  
+  .time-slot {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #e0e0e0;
+  }
+  
+  .time-icon {
+    background-color: var(--secondary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    flex-shrink: 0;
+  }
+  
+  .time-details h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+  
+  .time-details p {
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  .info-details {
+    margin-top: 30px;
+  }
+  
+  .info-details h3 {
+    color: var(--dark);
+    margin: 20px 0 10px;
+  }
+  
+  .info-details ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .info-details ul li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+  }
+  
+  .info-details ul li:before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--secondary);
+    position: absolute;
+    left: 0;
+  }
+  
+  .info-details p {
+    margin: 10px 0;
+    color: #666;
+  }
+  
+  .info-details p i {
+    color: var(--primary);
+    width: 20px;
+    margin-right: 5px;
+  }
+  
+  /* Form Styles */
+  .schedule-form-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .schedule-form-container h2 {
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-size: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+  
+  .required {
+    color: var(--accent);
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--secondary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+  }
+  
+  .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-item input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+    padding: 80px 0;
+    background-color: var(--secondary);
+    color: white;
+  }
+  
+  .faq-section .section-title {
+    color: white;
+  }
+  
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .faq-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .faq-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .faq-item h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .faq-item h3 i {
+    color: var(--accent);
+    margin-right: 10px;
+    font-size: 1.4rem;
+  }
+  
+  .faq-item p {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .schedule-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+  
+    .schedule-form-section {
+      padding: 40px 0;
+    }
+  
+    .schedule-info,
+    .schedule-form-container {
+      padding: 20px;
+    }
+  
+    .info-details ul li {
+      font-size: 0.95rem;
+    }
+  
+    .time-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+  
+    .time-details h3 {
+      font-size: 1.1rem;
+    }
+  
+    .faq-item h3 {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .schedule-info h2,
+    .schedule-form-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .time-slot {
+      flex-direction: column;
+    }
+  
+    .time-icon {
+      margin-bottom: 15px;
+    }
+  }
+  

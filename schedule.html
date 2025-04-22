@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule a Visit - Mother's Kids Playschool</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/schedule.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo-container">
+          <img src="img/logo.png" alt="Mother's Kids Playschool Logo" class="logo-img">
+          <div class="logo">Mother's Kids Playschool</div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#programs">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="index.html#contact">Contact Us</a></li>
+        </ul>
+        <div class="mobile-nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Add this outside the header section, right before the hero section -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-container">
+        <img src="img/logo.png" alt="Mother's Kids Playschool Logo" class="logo-img">
+        <div class="logo">Mother's Kids Playschool</div>
+      </div>
+      <div class="close-sidebar">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+    <ul class="sidebar-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#programs">Programs</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html#contact">Contact Us</a></li>
+    </ul>
+  </div>
+  <div class="overlay"></div>
+
+  <!-- Schedule Visit Hero Section -->
+  <section class="hero schedule-hero" id="schedule-visit">
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    <div class="bubble bubble-3"></div>
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+      <div class="hero-content">
+        <h1>Schedule Your Visit</h1>
+        <p>We'd love to show you around our playschool and introduce you to our learning environment. Fill out the form below to schedule a visit!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Visit Form Section -->
+  <section class="schedule-form-section">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+      <div class="schedule-content">
+        <div class="schedule-info">
+          <h2>Visit Information</h2>
+          <p>We offer guided tours of our facilities during the following times:</p>
+          
+          <div class="schedule-times">
+            <div class="time-slot">
+              <div class="time-icon"><i class="far fa-clock"></i></div>
+              <div class="time-details">
+                <h3>Weekday Tours</h3>
+                <p>Monday - Friday: 10:00 AM - 11:30 AM</p>
+                <p>Monday - Friday: 2:30 PM - 4:00 PM</p>
+              </div>
+            </div>
+            
+            <div class="time-slot">
+              <div class="time-icon"><i class="far fa-calendar"></i></div>
+              <div class="time-details">
+                <h3>Weekend Open House</h3>
+                <p>Saturday: 9:00 AM - 12:00 PM</p>
+                <p>Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="info-details">
+            <h3>What to Expect</h3>
+            <ul>
+              <li>A guided tour of our facilities</li>
+              <li>Meeting with teachers and staff</li>
+              <li>Information about our curriculum</li>
+              <li>Answers to your questions</li>
+              <li>Application process information</li>
+            </ul>
+            
+            <h3>Our Location</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Lane No. 4, Indraprasthpuram, Near Fatima Hospital</p>
+            <p><i class="fas fa-phone"></i> +91 95199 99640</p>
+            <p><i class="fas fa-envelope"></i> info@motherskidsplayschool.edu</p>
+          </div>
+        </div>
+        
+        <div class="schedule-form-container">
+          <h2>Request a Visit</h2>
+          <form class="schedule-form" id="visitForm">
+            <div class="form-group">
+              <label for="parent-name">Parent/Guardian Name <span class="required">*</span></label>
+              <input type="text" id="parent-name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="child-name">Child's Name <span class="required">*</span></label>
+              <input type="text" id="child-name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="child-age">Child's Age <span class="required">*</span></label>
+              <select id="child-age" required>
+                <option value="">Select Age</option>
+                <option value="2-3 years">2-3 years</option>
+                <option value="3-4 years">3-4 years</option>
+                <option value="4-5 years">4-5 years</option>
+                <option value="5-6 years">5-6 years</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="preferred-date">Preferred Visit Date <span class="required">*</span></label>
+              <input type="date" id="preferred-date" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="preferred-time">Preferred Time <span class="required">*</span></label>
+              <select id="preferred-time" required>
+                <option value="">Select Time</option>
+                <option value="10:00 AM - 11:30 AM">10:00 AM - 11:30 AM (Weekday)</option>
+                <option value="2:30 PM - 4:00 PM">2:30 PM - 4:00 PM (Weekday)</option>
+                <option value="9:00 AM - 12:00 PM">9:00 AM - 12:00 PM (Saturday)</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="questions">Questions or Special Requests</label>
+              <textarea id="questions" rows="4"></textarea>
+            </div>
+            
+            <button type="button" class="cta-button" id="submitButton" onclick="sendToWhatsapp()">Schedule My Visit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3><i class="fas fa-question-circle"></i> What is the student-teacher ratio?</h3>
+          <p>We maintain a small student-teacher ratio of 8:1 to ensure personalized attention for each child.</p>
+        </div>
+        <div class="faq-item">
+          <h3><i class="fas fa-question-circle"></i> What are your operating hours?</h3>
+          <p>We are open Monday through Friday from 7:30 AM to 5:30 PM, with flexible drop-off and pick-up times.</p>
+        </div>
+        <div class="faq-item">
+          <h3><i class="fas fa-question-circle"></i> Do you provide meals?</h3>
+          <p>We provide healthy snacks throughout the day. Parents need to send lunch with their children.</p>
+        </div>
+        <div class="faq-item">
+          <h3><i class="fas fa-question-circle"></i> What curriculum do you follow?</h3>
+          <p>We follow a play-based curriculum that incorporates elements from various educational philosophies.</p>
+        </div>
+        <div class="faq-item">
+          <h3><i class="fas fa-question-circle"></i> Do you offer part-time enrollment?</h3>
+          <p>Yes, we offer both full-time and part-time enrollment options to meet the needs of different families.</p>
+        </div>
+        <div class="faq-item">
+          <h3><i class="fas fa-question-circle"></i> How do you handle allergies?</h3>
+          <p>We maintain a detailed record of allergies and have protocols in place to ensure children's safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/919519999640"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p class="copyright">© 2024 Mother's Kids Playschool. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+
+    // Add this to your existing script tag in schedule.html, right after the DOMContentLoaded event listeners
+
+// Mobile sidebar functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const closeSidebar = document.querySelector('.close-sidebar');
+  const sidebar = document.querySelector('.sidebar');
+  const overlay = document.querySelector('.overlay');
+  const sidebarLinks = document.querySelectorAll('.sidebar-links a');
+  
+  // Open sidebar
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', function() {
+      sidebar.classList.add('active');
+      overlay.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
+    });
+  }
+  
+  // Close sidebar functions
+  function closeSidebarMenu() {
+    sidebar.classList.remove('active');
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+  }
+  
+  // Close when X is clicked
+  if (closeSidebar) {
+    closeSidebar.addEventListener('click', closeSidebarMenu);
+  }
+  
+  // Close when overlay is clicked
+  if (overlay) {
+    overlay.addEventListener('click', closeSidebarMenu);
+  }
+  
+  // Close when a link is clicked
+  if (sidebarLinks.length > 0) {
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        closeSidebarMenu();
+      });
+    });
+  }
+});
+
+    document.addEventListener('DOMContentLoaded', function() {
+    AOS.init();
+  });
+    // Animation for decorative bubbles
+    document.addEventListener('DOMContentLoaded', function() {
+      const bubbles = document.querySelectorAll('.bubble');
+      
+      bubbles.forEach(bubble => {
+        const randomDelay = Math.random() * 5;
+        bubble.style.animationDelay = `${randomDelay}s`;
+      });
+
+      // Smooth scroll for navigation
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+      
+      // Set minimum date to today for the date picker
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('preferred-date').setAttribute('min', today);
+    });
+    
+    // Function to send form data to WhatsApp
+    function sendToWhatsapp() {
+      // Get form values
+      const parentName = document.getElementById('parent-name').value;
+      const childName = document.getElementById('child-name').value;
+      const childAge = document.getElementById('child-age').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const preferredDate = document.getElementById('preferred-date').value;
+      const preferredTime = document.getElementById('preferred-time').value;
+      const questions = document.getElementById('questions').value;
+      const hearAbout = document.getElementById('hear-about').value;
+      
+      // Get selected programs
+      const programCheckboxes = document.querySelectorAll('input[name="program"]:checked');
+      let selectedPrograms = '';
+      programCheckboxes.forEach(function(checkbox, index) {
+        selectedPrograms += checkbox.value;
+        if (index < programCheckboxes.length - 1) {
+          selectedPrograms += ', ';
+        }
+      });
+      
+      // Validate form
+      if (!parentName || !childName || !childAge || !phone || !email || !preferredDate || !preferredTime || selectedPrograms === '') {
+        alert('Please fill in all required fields marked with *');
+        return;
+      }
+      
+      // Format date
+      const formattedDate = new Date(preferredDate).toLocaleDateString('en-IN');
+      
+      // Construct message
+      const message = `*Visit Request from Mother's Kids Playschool Website*
+      
+*Parent Name:* ${parentName}
+*Child Name:* ${childName}
+*Child Age:* ${childAge}
+*Phone:* ${phone}
+*Email:* ${email}
+*Preferred Visit Date:* ${formattedDate}
+*Preferred Time:* ${preferredTime}
+*Interested Programs:* ${selectedPrograms}
+*Questions/Requests:* ${questions}
+*How they heard about us:* ${hearAbout}`;
+      
+      // Send to WhatsApp (using the same number as in your home page)
+      const whatsappNumber = "919519999640";
+      const encodedText = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+      
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
+</body>
+</html>
