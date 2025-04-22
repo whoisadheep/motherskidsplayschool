@@ -1,9 +1,9 @@
 :root {
-    --primary: #FF9E00;
-    --secondary: #4ECDC4;
-    --accent: #FF6B6B;
-    --light: #F7FFF7;
-    --dark: #2A2D34;
+    --primary:#f6bd60;
+    --secondary:#84a59d;
+    --accent: #f5cac3;
+    --light: #ffffff;
+    --dark: #f28482;
   }
   
   * {
@@ -25,7 +25,6 @@
     padding: 0 20px;
   }
 
- /* Mobile Navigation - Fixed right positioning */
 .mobile-nav-toggle {
     display: none;
     font-size: 1.8rem;
@@ -223,7 +222,7 @@
   
   .cta-button {
     display: inline-block;
-    background-color: var(--accent);
+    background-color: var(--primary);
     color: var(--light);
     padding: 12px 30px;
     border-radius: 30px;
@@ -236,7 +235,7 @@
   }
   
   .cta-button:hover {
-    background-color: var(--primary);
+    background-color: var(--accent);
     transform: scale(1.05);
   }
   
@@ -380,6 +379,15 @@
     height: 150px;
   }
   
+  #btn{
+    background-color: var(--secondary);
+  }
+
+  #btn:hover {
+    background-color: var(--accent);
+    transform: scale(1.05);
+  }
+
   footer {
     background-color: var(--dark);
     color: var(--light);
@@ -401,7 +409,7 @@
   
   .copyright {
     font-size: 0.9rem;
-    color: #aaa;
+    color: #fff;
   }
   
   /* Decorative elements */
