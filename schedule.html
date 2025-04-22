@@ -297,40 +297,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Function to send form data to WhatsApp
-    function sendToWhatsapp() {
-      // Get form values
-      const parentName = document.getElementById('parent-name').value;
-      const childName = document.getElementById('child-name').value;
-      const childAge = document.getElementById('child-age').value;
-      const phone = document.getElementById('phone').value;
-      const email = document.getElementById('email').value;
-      const preferredDate = document.getElementById('preferred-date').value;
-      const preferredTime = document.getElementById('preferred-time').value;
-      const questions = document.getElementById('questions').value;
-      const hearAbout = document.getElementById('hear-about').value;
-      
-      // Get selected programs
-      const programCheckboxes = document.querySelectorAll('input[name="program"]:checked');
-      let selectedPrograms = '';
-      programCheckboxes.forEach(function(checkbox, index) {
-        selectedPrograms += checkbox.value;
-        if (index < programCheckboxes.length - 1) {
-          selectedPrograms += ', ';
-        }
-      });
-      
-      // Validate form
-      if (!parentName || !childName || !childAge || !phone || !email || !preferredDate || !preferredTime || selectedPrograms === '') {
-        alert('Please fill in all required fields marked with *');
-        return;
-      }
-      
-      // Format date
-      const formattedDate = new Date(preferredDate).toLocaleDateString('en-IN');
-      
-      // Construct message
-      const message = `*Visit Request from Mother's Kids Playschool Website*
-      
+    // Function to send form data to WhatsApp
+function sendToWhatsapp() {
+  // Get form values
+  const parentName = document.getElementById('parent-name').value;
+  const childName = document.getElementById('child-name').value;
+  const childAge = document.getElementById('child-age').value;
+  const phone = document.getElementById('phone').value;
+  const email = document.getElementById('email').value;
+  const preferredDate = document.getElementById('preferred-date').value;
+  const preferredTime = document.getElementById('preferred-time').value;
+  const questions = document.getElementById('questions').value;
+  
+  // Validate form
+  if (!parentName || !childName || !childAge || !phone || !email || !preferredDate || !preferredTime) {
+    alert('Please fill in all required fields marked with *');
+    return;
+  }
+  
+  // Format date
+  const formattedDate = new Date(preferredDate).toLocaleDateString('en-IN');
+  
+  // Construct message
+  const message = `*Visit Request from Mother's Kids Playschool Website*
+  
 *Parent Name:* ${parentName}
 *Child Name:* ${childName}
 *Child Age:* ${childAge}
@@ -338,17 +328,15 @@ document.addEventListener('DOMContentLoaded', function() {
 *Email:* ${email}
 *Preferred Visit Date:* ${formattedDate}
 *Preferred Time:* ${preferredTime}
-*Interested Programs:* ${selectedPrograms}
-*Questions/Requests:* ${questions}
-*How they heard about us:* ${hearAbout}`;
-      
-      // Send to WhatsApp (using the same number as in your home page)
-      const whatsappNumber = "919519999640";
-      const encodedText = encodeURIComponent(message);
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
-      
-      window.open(whatsappURL, '_blank');
-    }
+*Questions/Requests:* ${questions}`;
+  
+  // Send to WhatsApp (using the same number as in your home page)
+  const whatsappNumber = "919519999640";
+  const encodedText = encodeURIComponent(message);
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
+  
+  window.open(whatsappURL, '_blank');
+}
   </script>
 </body>
 </html>
